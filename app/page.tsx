@@ -68,26 +68,47 @@ export default function App() {
       },
       {
         // Focus on the middle band of the viewport to avoid early switches.
+        // Loosened for mobile so sections intersect more reliably.
         root: null,
-        rootMargin: "-35% 0px -50% 0px",
-        threshold: [0.25, 0.5, 0.75],
+        rootMargin: "0px 0px -40% 0px",
+        threshold: [0, 0.25, 0.5],
       },
     );
     els.forEach((el) => observer.observe(el));
-    const onScrollBottomCheck = () => {
-      if (pendingTarget) return;
+    const onScrollHandler = () => {
+      // If we're at the very top, always highlight "Home".
+      if (!pendingTarget && window.scrollY <= 10) {
+        setActive("#home");
+        return;
+      }
+      // While not handling a click-initiated scroll, compute the nearest section
+      // to a mid-viewport anchor for robust mobile activation.
+      if (!pendingTarget && els.length) {
+        const targetY = window.innerHeight * 0.35;
+        let bestId: string | null = null;
+        let bestDist = Infinity;
+        for (const el of els) {
+          const rect = el.getBoundingClientRect();
+          const dist = Math.abs(rect.top - targetY);
+          if (dist < bestDist) {
+            bestDist = dist;
+            bestId = el.id;
+          }
+        }
+        if (bestId) setActive(`#${bestId}`);
+      }
+      // Bottom-of-page guard to ensure the last section becomes active.
       const doc = document.documentElement;
       const atBottom =
         Math.ceil(window.innerHeight + window.scrollY) >= doc.scrollHeight;
-      if (atBottom) {
+      if (!pendingTarget && atBottom) {
         setActive("#contact");
       }
     };
-    window.addEventListener("scroll", onScrollBottomCheck, { passive: true });
-    onScrollBottomCheck();
-
+    window.addEventListener("scroll", onScrollHandler, { passive: true });
+    onScrollHandler();
     return () => {
-      window.removeEventListener("scroll", onScrollBottomCheck);
+      window.removeEventListener("scroll", onScrollHandler);
       observer.disconnect();
     };
   }, [pendingTarget]);
