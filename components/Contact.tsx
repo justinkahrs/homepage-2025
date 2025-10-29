@@ -3,7 +3,7 @@ import ContactForm from "./ContactForm"
 function Contact() {
     return (
         <section id="contact" className="scroll-mt-28">
-            <div className="rounded-3xl border border-zinc-200/60 bg-white p-8 dark:border-white/10 dark:bg-zinc-950">
+            <div className=" border border-zinc-200/60 bg-white p-8 dark:border-white/10 dark:bg-zinc-950">
                 <motion.h2
                     initial={{ opacity: 0, y: 10 }}
                     whileInView={{ opacity: 1, y: 0 }}

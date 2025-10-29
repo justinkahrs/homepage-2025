@@ -3,7 +3,7 @@ import { motion } from "motion/react";
 function Experience() {
     return (
         <section id="experience" className="scroll-mt-28">
-            <div className="rounded-3xl border border-zinc-200/60 bg-white p-8 dark:border-white/10 dark:bg-zinc-950">
+            <div className=" border border-zinc-200/60 bg-white p-8 dark:border-white/10 dark:bg-zinc-950">
                 <motion.h2
                     initial={{ opacity: 0, y: 10 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -13,7 +13,7 @@ function Experience() {
                 >
                     Experience
                 </motion.h2>
-                <ol className="relative mt-6 space-y-8 border-l border-zinc-200 pl-6 dark:border-zinc-800">
+                <ol className="relative mt-6 space-y-8 border-l border-orange-300 pl-6 dark:border-orange-800">
                     {[
                         {
                             role: "Creator / Solo-Developer",
@@ -49,7 +49,7 @@ function Experience() {
                             period: "Jan 2018 — Oct 2024",
                             blurb:
                                 "Shipped next-generation shared-mobility solutions and maintained fleet-automation, booking, and operations products for a Fortune Global 500 client.",
-                            link: "https://www.google.com",
+                            link: "https://www.ridecell.com",
                         },
                         {
                             role: "Senior Frontend Engineer",
@@ -57,7 +57,7 @@ function Experience() {
                             period: "Jul 2015 — Jan 2018",
                             blurb:
                                 "Built internal data tools and dashboards, integrated Tableau/Denodo, and followed HIPAA/FERPA-compliant practices.",
-                            link: "https://www.google.com",
+                            link: "https://www.iu.edu",
                         },
                         {
                             role: "Server Support Technician",
@@ -65,7 +65,7 @@ function Experience() {
                             period: "Aug 2010 — Jul 2015",
                             blurb:
                                 "Provisioned and maintained physical servers and wrote automation scripts for routine maintenance.",
-                            link: "https://www.google.com",
+                            link: "https://www.gvsu.edu",
                         },
                     ].map((job, i) => (
                         <li key={i} className="ml-2">

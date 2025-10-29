@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 import handleScroll from "@/utils/handleScroll";
 type NavItem = {
   label: string;
@@ -36,9 +37,9 @@ function Nav({ active, setActive, setPendingTarget }) {
           {NAV.map((item) => (
             <li key={item.href}>
               <button
-                className={`rounded-full px-4 py-2 text-sm font-medium transition ${
+                className={`relative rounded-full px-4 py-2 text-sm font-medium transition ${
                   active === item.href
-                    ? "bg-zinc-900 text-white dark:bg-zinc-100 dark:text-black"
+                    ? "text-white dark:text-black"
                     : "text-zinc-700 hover:bg-zinc-200/50 dark:text-zinc-300 dark:hover:bg-zinc-800/80"
                 }`}
                 onClick={() => {
@@ -54,7 +55,19 @@ function Nav({ active, setActive, setPendingTarget }) {
                   handleScroll(item.href);
                 }}
               >
-                {item.label}
+                {active === item.href && (
+                  <motion.span
+                    layoutId="navActive"
+                    className="absolute inset-0 rounded-full bg-zinc-900 dark:bg-zinc-100"
+                    transition={{
+                      type: "spring",
+                      stiffness: 500,
+                      damping: 30,
+                      mass: 1,
+                    }}
+                  />
+                )}
+                <span className="relative z-10">{item.label}</span>
               </button>
             </li>
           ))}

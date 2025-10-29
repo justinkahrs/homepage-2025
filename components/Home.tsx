@@ -6,7 +6,7 @@ function Home() {
 
     return (
         <section id="home" className="scroll-mt-28">
-            <div className="relative overflow-hidden rounded-3xl border border-zinc-200/60 bg-gradient-to-br from-white to-zinc-100 p-10 shadow-sm dark:border-white/10 dark:from-zinc-950 dark:to-zinc-900">
+            <div className="relative overflow-hidden p-10">
                 <motion.h1
                     initial={{ opacity: 0, y: 16 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -14,7 +14,7 @@ function Home() {
                     className="text-balance text-4xl font-semibold tracking-tight sm:text-5xl"
                 >
                     Hi, I’m{" "}
-                    <span className="underline decoration-zinc-300 dark:decoration-zinc-700">
+                    <span className="underline decoration-orange-300 dark:decoration-orange-700">
                         Justin
                     </span>
                     .

@@ -22,7 +22,7 @@ function Footer() {
                         <GitHubIcon className="h-5 w-5" />
                     </a>
                     <a
-                        href="https://www.linkedin.com/in/justinkahrs"
+                        href="https://www.linkedin.com/in/justin-kahrs"
                         aria-label="LinkedIn"
                         className="rounded-full p-2 hover:bg-zinc-200/60 dark:hover:bg-zinc-800/80"
                         target="_blank"
