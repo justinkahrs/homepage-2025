@@ -1,115 +1,76 @@
 "use client";
 import { useEffect, useState } from "react";
-
+import { useScroll, useMotionValueEvent } from "framer-motion";
 import About from "@/components/About";
 import Experience from "@/components/Experience";
 import Home from "@/components/Home";
 import Contact from "@/components/Contact";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+
 export default function App() {
   const [active, setActive] = useState<string>("#home");
-  // When navigating via clicks, hold the intended target until it's in view.
   const [pendingTarget, setPendingTarget] = useState<string | null>(null);
-  // Safety: if the target element doesn't exist or never intersects, clear the lock.
-  useEffect(() => {
-    if (!pendingTarget) return;
-    const id = pendingTarget.replace("#", "");
-    const el =
-      typeof document !== "undefined" ? document.getElementById(id) : null;
-    // If the element isn't in the DOM, drop the pending lock so observer can work normally.
-    if (!el) {
-      setPendingTarget(null);
+  const { scrollY } = useScroll();
+  const updateActiveFromScroll = () => {
+    const ids = ["home", "about", "experience", "contact"] as const;
+    // If a click initiated the scroll, freeze the active state to that target
+    // and ignore all scroll-based calculations until the scroll ends.
+    if (pendingTarget) {
+      if (active !== pendingTarget) setActive(pendingTarget);
       return;
     }
-    // Failsafe: clear after 2s in case intersection never triggers (e.g., layout/height edge cases).
-    const timeout = window.setTimeout(() => setPendingTarget(null), 2000);
-    return () => window.clearTimeout(timeout);
-  }, [pendingTarget]);
-  // Keep nav in sync with scroll position using IntersectionObserver.
+    if (window.scrollY <= 100) {
+      setActive("#home");
+      return;
+    }
+    // Bottom-of-page guard to ensure the last section becomes active.
+    const doc = document.documentElement;
+    const atBottom =
+      Math.ceil(window.innerHeight + window.scrollY) >= doc.scrollHeight;
+    if (atBottom) {
+      setActive("#contact");
+      return;
+    }
+    // Normal behavior: choose the section closest to a mid-viewport anchor.
+    const targetY = window.innerHeight * 0.35;
+    let bestId: string | null = null;
+    let bestDist = Infinity;
+    for (const id of ids) {
+      const el = document.getElementById(id);
+      if (!el) continue;
+      const rect = el.getBoundingClientRect();
+      const dist = Math.abs(rect.top - targetY);
+      if (dist < bestDist) {
+        bestDist = dist;
+        bestId = id;
+      }
+    }
+    if (bestId) setActive(`#${bestId}`);
+  };
+  useMotionValueEvent(scrollY, "change", () => {
+    updateActiveFromScroll();
+  });
   useEffect(() => {
-    const ids = ["home", "about", "experience", "contact"] as const;
-    const els = ids
-      .map((id) => document.getElementById(id))
-      .filter(Boolean) as HTMLElement[];
-    if (els.length === 0) return;
-    const observer = new IntersectionObserver(
-      (entries) => {
-        // If we're in a click-initiated scroll, only react to that target.
-        if (pendingTarget) {
-          const targetId = pendingTarget.replace("#", "");
-          const hit = entries.find(
-            (e) => e.target.id === targetId && e.isIntersecting,
-          );
-          if (hit) {
-            setActive(`#${hit.target.id}`);
-            setPendingTarget(null);
-          }
-          // While pending, ignore other intersections to avoid flicker.
-          return;
-        }
-        // Normal behavior: choose the most visible section.
-        const visible = entries.filter((e) => e.isIntersecting);
-        if (visible.length) {
-          visible.sort((a, b) => b.intersectionRatio - a.intersectionRatio);
-          const top = visible[0];
-          setActive(`#${top.target.id}`);
-        } else {
-          // Fallback: pick the section closest to the viewport top.
-          const closest = entries
-            .slice()
-            .sort(
-              (a, b) =>
-                Math.abs(a.boundingClientRect.top) -
-                Math.abs(b.boundingClientRect.top),
-            )[0];
-          if (closest) setActive(`#${closest.target.id}`);
-        }
-      },
-      {
-        // Focus on the middle band of the viewport to avoid early switches.
-        // Loosened for mobile so sections intersect more reliably.
-        root: null,
-        rootMargin: "0px 0px -40% 0px",
-        threshold: [0, 0.25, 0.5],
-      },
-    );
-    els.forEach((el) => observer.observe(el));
-    const onScrollHandler = () => {
-      // If we're at the very top, always highlight "Home".
-      if (!pendingTarget && window.scrollY <= 10) {
-        setActive("#home");
-        return;
-      }
-      // While not handling a click-initiated scroll, compute the nearest section
-      // to a mid-viewport anchor for robust mobile activation.
-      if (!pendingTarget && els.length) {
-        const targetY = window.innerHeight * 0.35;
-        let bestId: string | null = null;
-        let bestDist = Infinity;
-        for (const el of els) {
-          const rect = el.getBoundingClientRect();
-          const dist = Math.abs(rect.top - targetY);
-          if (dist < bestDist) {
-            bestDist = dist;
-            bestId = el.id;
-          }
-        }
-        if (bestId) setActive(`#${bestId}`);
-      }
-      // Bottom-of-page guard to ensure the last section becomes active.
-      const doc = document.documentElement;
-      const atBottom =
-        Math.ceil(window.innerHeight + window.scrollY) >= doc.scrollHeight;
-      if (!pendingTarget && atBottom) {
-        setActive("#contact");
-      }
+    updateActiveFromScroll();
+  }, []);
+  useEffect(() => {
+    if (!pendingTarget) return;
+    const onScrollEnd = () => {
+      setPendingTarget(null);
+      window.removeEventListener("scrollend", onScrollEnd as EventListener);
     };
-    window.addEventListener("scroll", onScrollHandler, { passive: true });
-    onScrollHandler();
+    // Use 'scrollend' when available; keep a short fallback so we always release.
+    window.addEventListener("scrollend", onScrollEnd as EventListener, {
+      once: true,
+    });
+    const timeout = window.setTimeout(() => {
+      setPendingTarget(null);
+      window.removeEventListener("scrollend", onScrollEnd as EventListener);
+    }, 1600);
     return () => {
-      window.removeEventListener("scroll", onScrollHandler);
-      observer.disconnect();
+      window.clearTimeout(timeout);
+      window.removeEventListener("scrollend", onScrollEnd as EventListener);
     };
   }, [pendingTarget]);
   return (
