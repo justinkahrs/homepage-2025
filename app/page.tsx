@@ -74,7 +74,7 @@ export default function App() {
     };
   }, [pendingTarget]);
   return (
-    <div className="bg-zinc-50 text-zinc-900 antialiased dark:bg-black dark:text-zinc-100">
+    <div className="antialiased">
       <Nav
         active={active}
         setActive={setActive}

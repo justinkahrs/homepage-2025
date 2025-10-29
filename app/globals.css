@@ -3,6 +3,7 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --dot-color: #d1d5db;
 }
 
 @theme inline {
@@ -16,11 +17,27 @@
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+    --dot-color: #ffffff;
   }
 }
 
 body {
-  background: var(--background);
+  background-color: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  background-image: radial-gradient(var(--dot-color) 0.6px, transparent 0.6px);
+  background-size: 16px 16px;
+  background-attachment: fixed;
+  animation: driftDots 20s linear infinite;
+}
+@keyframes driftDots {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 100px 140px;
+  }
+  100% {
+    background-position: 0 0;
+  }
 }

@@ -6,7 +6,7 @@ function Home() {
 
     return (
         <section id="home" className="scroll-mt-28">
-            <div className="relative overflow-hidden p-10">
+            <div className="border border-zinc-200/60 bg-white p-12 dark:border-white/10 dark:bg-zinc-950">
                 <motion.h1
                     initial={{ opacity: 0, y: 16 }}
                     animate={{ opacity: 1, y: 0 }}
