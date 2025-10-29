@@ -1,9 +1,7 @@
-import handleScroll from "@/utils/handleScroll"
-import { motion } from "motion/react"
-
+import handleScroll from "@/utils/handleScroll";
+import { motion } from "motion/react";
 
 function Home() {
-
     return (
         <section id="home" className="scroll-mt-28">
             <div className="border border-zinc-200/60 bg-white p-12 dark:border-white/10 dark:bg-zinc-950">
@@ -11,12 +9,30 @@ function Home() {
                     initial={{ opacity: 0, y: 16 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, ease: "easeOut" }}
-                    className="text-balance text-4xl font-semibold tracking-tight sm:text-5xl"
+                    className="text-balance text-4xl font-semibold tracking-tight sm:text-5xl font-[Noto_Serif]"
                 >
                     Hi, I’m{" "}
-                    <span className="underline decoration-orange-300 dark:decoration-orange-700">
+                    <motion.span
+                        className="relative "
+                        initial="hidden"
+                        animate="visible"
+                        variants={{
+                            hidden: { opacity: 0, y: 8 },
+                            visible: {
+                                opacity: 1,
+                                y: 0,
+                                transition: { duration: 0.6, ease: "easeOut" },
+                            },
+                        }}
+                    >
                         Justin
-                    </span>
+                        <motion.div
+                            className="absolute left-0 bottom-0 h-[2px] w-full origin-left bg-orange-300 dark:bg-orange-700"
+                            initial={{ scaleX: 0 }}
+                            animate={{ scaleX: 1 }}
+                            transition={{ duration: 1.5, ease: "easeOut" }}
+                        />
+                    </motion.span>
                     .
                 </motion.h1>
                 <motion.p
@@ -34,8 +50,8 @@ function Home() {
                     transition={{ delay: 0.2, duration: 0.6, ease: "easeOut" }}
                     className="mt-6 max-w-prose text-pretty text-zinc-700 dark:text-zinc-300"
                 >
-                    I blend <strong>React/Next.js</strong> finesse with reliable
-                    backend chops to ship fast, robust, and delightful products.
+                    I blend <strong>React/Next.js</strong> finesse with reliable backend
+                    chops to ship fast, robust, and delightful products.
                 </motion.p>
                 <motion.div
                     initial={{ opacity: 0, y: 8 }}
@@ -58,6 +74,6 @@ function Home() {
                 </motion.div>
             </div>
         </section>
-    )
+    );
 }
-export default Home
+export default Home;
