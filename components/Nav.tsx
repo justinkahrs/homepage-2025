@@ -11,7 +11,12 @@ const NAV: NavItem[] = [
     { label: "Experience", href: "#experience" },
     { label: "Contact", href: "#contact" },
 ];
-function Nav({ active, setActive, setPendingTarget }) {
+interface NavProps {
+    active: string;
+    setActive: (href: string) => void;
+    setPendingTarget: (href: string | null) => void;
+}
+function Nav({ active, setActive, setPendingTarget }: NavProps) {
     // Opacity for the edge labels (1 at top → 0 after ~300px)
     const [edgeOpacity, setEdgeOpacity] = useState(1);
     useEffect(() => {
@@ -38,8 +43,8 @@ function Nav({ active, setActive, setPendingTarget }) {
                         <li key={item.href}>
                             <button
                                 className={`relative rounded-full px-4 py-2 text-sm font-medium transition ${active === item.href
-                                    ? "text-white dark:text-black"
-                                    : "text-zinc-700 hover:bg-zinc-200/50 dark:text-zinc-300 dark:hover:bg-zinc-800/80"
+                                        ? "text-white dark:text-black"
+                                        : "text-zinc-700 hover:bg-zinc-200/50 dark:text-zinc-300 dark:hover:bg-zinc-800/80"
                                     }`}
                                 onClick={() => {
                                     const id = item.href.replace("#", "");
