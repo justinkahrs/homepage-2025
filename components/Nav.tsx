@@ -1,0 +1,63 @@
+import { useEffect, useState } from "react";
+import handleScroll from "@/utils/handleScroll";
+type NavItem = {
+    label: string;
+    href: string;
+};
+const NAV: NavItem[] = [
+    { label: "Home", href: "#home" },
+    { label: "About", href: "#about" },
+    { label: "Experience", href: "#experience" },
+    { label: "Contact", href: "#contact" },
+];
+function Nav({ active, setActive }) {
+    // Opacity for the edge labels (1 at top → 0 after ~300px)
+    const [edgeOpacity, setEdgeOpacity] = useState(1);
+    useEffect(() => {
+        const handleScrollY = () => {
+            const y = typeof window !== "undefined" ? window.scrollY : 0;
+            const next = Math.max(0, Math.min(1, 1 - y / 300)); // fade over 300px
+            setEdgeOpacity(next);
+        };
+        handleScrollY(); // initialize on mount
+        window.addEventListener("scroll", handleScrollY, { passive: true });
+        return () => window.removeEventListener("scroll", handleScrollY);
+    }, []);
+    return (
+        <nav className="fixed inset-x-0 top-0 z-50 mx-auto mt-6 flex w-full max-w-4xl items-center justify-center px-4">
+            <div className="flex w-full items-center justify-between rounded-full border border-zinc-200/50 bg-white/70 px-3 py-2 backdrop-blur-md dark:border-white/10 dark:bg-zinc-900/60">
+                <div
+                    className="hidden pl-2 text-sm font-semibold tracking-tight text-zinc-700 transition-opacity duration-300 dark:text-zinc-300 sm:block"
+                    style={{ opacity: edgeOpacity }}
+                >
+                    Justin Kahrs
+                </div>
+                <ul className="flex w-full items-center justify-between gap-1 sm:w-auto">
+                    {NAV.map((item) => (
+                        <li key={item.href}>
+                            <button
+                                className={`rounded-full px-4 py-2 text-sm font-medium transition ${active === item.href
+                                    ? "bg-zinc-900 text-white dark:bg-zinc-100 dark:text-black"
+                                    : "text-zinc-700 hover:bg-zinc-200/50 dark:text-zinc-300 dark:hover:bg-zinc-800/80"
+                                    }`}
+                                onClick={() => {
+                                    setActive(item.href);
+                                    handleScroll(item.href);
+                                }}
+                            >
+                                {item.label}
+                            </button>
+                        </li>
+                    ))}
+                </ul>
+                <div
+                    className="hidden pr-2 text-xs text-zinc-500 transition-opacity duration-300 dark:text-zinc-400 sm:block"
+                    style={{ opacity: edgeOpacity }}
+                >
+                    Senior Software Engineer
+                </div>
+            </div>
+        </nav>
+    );
+}
+export default Nav;
