@@ -33,7 +33,7 @@ function Nav({ active, setActive, setPendingTarget }: NavProps) {
         <nav className="fixed inset-x-0 top-0 z-50 mx-auto mt-6 flex w-full max-w-4xl items-center justify-center px-4">
             <div className="flex w-full items-center justify-between  border border-zinc-200/50 bg-white/70 px-3 py-2 backdrop-blur-md dark:border-white/10 dark:bg-zinc-900/60">
                 <div
-                    className="hidden pl-2 text-lg font-bold tracking-tight text-zinc-700 transition-opacity duration-300 dark:text-zinc-300 sm:block font-[Noto_Serif]"
+                    className="hidden pl-2 text-lg font-bold tracking-tight text-zinc-900 transition-opacity duration-300 dark:text-zinc-300 sm:block font-[Noto_Serif]"
                     style={{ opacity: edgeOpacity }}
                 >
                     Justin Kahrs

@@ -22,7 +22,7 @@ function About() {
                 <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-3">
                     <TechCard
                         title="Frontend"
-                        items={["React", "Next.js", "Tailwind CSS", "Framer Motion"]}
+                        items={["React", "Next.js", "Tailwind/DaisyUI", "Framer Motion"]}
                     />
                     <TechCard
                         title="Backend"
@@ -30,7 +30,7 @@ function About() {
                     />
                     <TechCard
                         title="Systems"
-                        items={["Rust", "CLI tooling", "Perf-minded code"]}
+                        items={["Rust", "CLI tooling", "Perf-minded code", "Github Actions"]}
                     />
                 </div>
             </div>

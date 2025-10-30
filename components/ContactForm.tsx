@@ -65,8 +65,8 @@ function ContactForm() {
             </div>
             <div className="sm:col-span-2">
                 <button
-                    type="submit"
-                    className="w-full rounded-xl bg-zinc-900 px-4 py-3 text-sm font-medium text-white transition hover:bg-zinc-800 dark:bg-zinc-100 dark:text-black dark:hover:bg-zinc-200"
+                    type="button"
+                    className="w-full rounded-full bg-zinc-900 px-4 py-3 text-sm font-medium text-white transition hover:bg-zinc-800 dark:bg-zinc-100 dark:text-black dark:hover:bg-zinc-200"
                 >
                     Send Email
                 </button>

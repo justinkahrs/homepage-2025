@@ -1,23 +1,23 @@
-@import "tailwindcss";
-
-:root {
+@import "tailwindcss";:root {
   --background: #ffffff;
   --foreground: #171717;
   --dot-color: #0a0a0a;
+  --gradient-a: #000000;
+  --gradient-b: #2b2929;
 }
-
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
-
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
     --dot-color: #ffffff;
+    --gradient-a: #ffffff;
+    --gradient-b: #777777;
   }
 }
 
@@ -25,19 +25,60 @@ body {
   background-color: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
-  background-image: radial-gradient(var(--dot-color) 0.6px, transparent 0.6px);
-  background-size: 64px 64px;
-  background-attachment: fixed;
-  animation: driftDots 20s linear infinite;
+  min-height: 100%;
 }
-@keyframes driftDots {
+.bg {
+  animation: slide 24s ease-in-out infinite alternate;
+  background-image: linear-gradient(-35deg, var(--gradient-a) 70%, var(--gradient-b) 30%);
+  bottom: 0;
+  left: -50%;
+  opacity: .5;
+  position: fixed;
+  right: -50%;
+  top: 0;
+  z-index: -1;
+  filter: blur(18px);
+  -webkit-filter: blur(18px);
+}
+.bg2 {
+  animation-direction: alternate-reverse;
+  animation-duration: 16s;
+}
+.bg3 {
+  animation-duration: 20s;
+}
+ 
+h1 {
+  font-family: monospace;
+}
+@keyframes slide {
   0% {
-    background-position: 0 0;
+    transform: translateX(-25%);
   }
-  50% {
-    background-position: 100px 140px;
+100% {
+    transform: translateX(25%);
   }
-  100% {
-    background-position: 0 0;
+}
+/* Button defaults */
+button[type="button"],
+a[type="button"] {
+  background-color: orange;
+  border: 1px solid orange;
+  color: #000000;
+  cursor: pointer;
+}
+button[type="button"]:hover,
+a[type="button"]:hover {
+  filter: brightness(0.9);
+  cursor: pointer;
+}
+@media (prefers-color-scheme: dark) {
+  button[type="button"] {
+    background-color: orange;
+    border: 1px solid orange;
+    color: #000000;
+  }
+  button[type="button"]:hover {
+    filter: brightness(1.1);
   }
 }

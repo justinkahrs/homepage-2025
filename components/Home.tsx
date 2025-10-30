@@ -4,7 +4,7 @@ import { motion } from "motion/react";
 function Home() {
     return (
         <section id="home" className="scroll-mt-28">
-            <div className="border border-zinc-200/60 bg-white p-12 dark:border-white/10 dark:bg-zinc-950">
+            <div className="p-12 text-white dark:text-black">
                 <motion.h1
                     initial={{ opacity: 0, y: 16 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -39,7 +39,7 @@ function Home() {
                     initial={{ opacity: 0, y: 12 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.1, duration: 0.6, ease: "easeOut" }}
-                    className="mt-4 text-lg text-zinc-600 dark:text-zinc-400"
+                    className="mt-4 text-lg text-white dark:text-black"
                 >
                     Senior Software Engineer crafting polished web experiences and
                     scalable systems.
@@ -48,7 +48,7 @@ function Home() {
                     initial={{ opacity: 0, y: 12 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.2, duration: 0.6, ease: "easeOut" }}
-                    className="mt-6 max-w-prose text-pretty text-zinc-700 dark:text-zinc-300"
+                    className="mt-6 max-w-prose text-pretty text-white dark:text-black"
                 >
                     I blend <strong>React/Next.js</strong> finesse with reliable backend
                     chops to ship fast, robust, and delightful products.
@@ -60,14 +60,15 @@ function Home() {
                     className="mt-8 flex flex-wrap gap-3"
                 >
                     <button
+                        className="rounded-full bg-zinc-900 px-5 py-2.5 text-sm font-medium text-white transition hover:bg-zinc-800 dark:bg-zinc-900 dark:hover:bg-zinc-800"
                         onClick={() => handleScroll("#experience")}
-                        className="rounded-full bg-zinc-900 px-5 py-2.5 text-sm font-medium text-white transition hover:bg-zinc-800 dark:bg-zinc-100 dark:text-black dark:hover:bg-zinc-200"
+                        type="button"
                     >
                         View Experience
                     </button>
                     <button
                         onClick={() => handleScroll("#contact")}
-                        className="rounded-full border border-zinc-300 bg-white/50 px-5 py-2.5 text-sm font-medium text-zinc-900 transition hover:bg-zinc-100 dark:border-zinc-700 dark:bg-zinc-900/60 dark:text-zinc-100 dark:hover:bg-zinc-800"
+                        className="rounded-full border border-zinc-300 bg-transparent px-5 py-2.5 text-sm font-medium text-white dark:text-black transition hover:bg-zinc-800 dark:border-zinc-700 dark:bg-transparent dark:hover:bg-zinc-300"
                     >
                         Get in Touch
                     </button>
