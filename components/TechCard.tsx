@@ -8,7 +8,7 @@ function TechCard({ title, items }: { title: string; items: string[] }) {
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.45 }}
         >
-            <h3 className="text-base text-white font-semibold">{title}</h3>
+            <h3 className="text-base text-white font-bold uppercase tracking-wider">{title}</h3>
             <ul className="mt-3 space-y-1 text-sm text-gray-300">
                 {items.map((it) => (
                     <li key={it} className="flex items-center gap-2">

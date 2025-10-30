@@ -1,30 +1,13 @@
 @import "tailwindcss";:root {
   --background: #ffffff;
   --foreground: #171717;
-  --dot-color: #0a0a0a;
   --gradient-a: #000000;
   --gradient-b: #2b2929;
 }
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-/* @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-    --dot-color: #ffffff;
-    --gradient-a: #ffffff;
-    --gradient-b: #777777;
-  }
-} */
 
 body {
   background-color: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
   min-height: 100%;
 }
 .bg {
@@ -48,9 +31,7 @@ body {
   animation-duration: 20s;
 }
  
-h1 {
-  font-family: monospace;
-}
+
 @keyframes slide {
   0% {
     transform: translateX(-25%);
@@ -71,14 +52,4 @@ button[type="button"]:hover,
 a[type="button"]:hover {
   filter: brightness(0.9);
   cursor: pointer;
-}
-@media (prefers-color-scheme: dark) {
-  button[type="button"] {
-    background-color: lab(86.9953 -47.2691 25.0054);
-    border: 1px solid lab(86.9953 -47.2691 25.0054);
-    color: #000000;
-  }
-  button[type="button"]:hover {
-    filter: brightness(1.1);
-  }
 }

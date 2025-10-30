@@ -17,7 +17,7 @@ function ContactForm() {
             <div className="sm:col-span-1">
                 <label
                     htmlFor="name"
-                    className="block text-sm font-medium text-zinc-700 dark:text-zinc-300"
+                    className="block text-sm font-medium text-white"
                 >
                     Name
                 </label>
@@ -26,14 +26,14 @@ function ContactForm() {
                     name="name"
                     required
                     autoComplete="name"
-                    className="mt-2 w-full rounded-xl border border-zinc-300 bg-white px-3 py-2 text-sm outline-none ring-0 transition focus:border-zinc-500 dark:border-zinc-700 dark:bg-zinc-900"
+                    className="mt-2 w-full border border-green-300 bg-gray-400 px-3 py-2 text-sm focus:border-zinc-500"
                     placeholder="Your name"
                 />
             </div>
             <div className="sm:col-span-1">
                 <label
                     htmlFor="email"
-                    className="block text-sm font-medium text-zinc-700 dark:text-zinc-300"
+                    className="block text-sm font-medium text-white"
                 >
                     Email
                 </label>
@@ -43,14 +43,14 @@ function ContactForm() {
                     type="email"
                     required
                     autoComplete="email"
-                    className="mt-2 w-full rounded-xl border border-zinc-300 bg-white px-3 py-2 text-sm outline-none ring-0 transition focus:border-zinc-500 dark:border-zinc-700 dark:bg-zinc-900"
+                    className="mt-2 w-full border border-green-300 bg-gray-400 px-3 py-2 text-sm outline-none  focus:border-zinc-500 "
                     placeholder="you@example.com"
                 />
             </div>
             <div className="sm:col-span-2">
                 <label
                     htmlFor="message"
-                    className="block text-sm font-medium text-zinc-700 dark:text-zinc-300"
+                    className="block text-sm font-medium text-white"
                 >
                     Message
                 </label>
@@ -59,14 +59,14 @@ function ContactForm() {
                     name="message"
                     rows={5}
                     required
-                    className="mt-2 w-full rounded-xl border border-zinc-300 bg-white px-3 py-2 text-sm outline-none ring-0 transition focus:border-zinc-500 dark:border-zinc-700 dark:bg-zinc-900"
+                    className="mt-2 w-full border border-green-300 bg-gray-400 px-3 py-2 text-sm outline-none  focus:border-zinc-500 "
                     placeholder="Tell me about your project..."
                 />
             </div>
             <div className="sm:col-span-2">
                 <button
                     type="button"
-                    className="w-full rounded-full bg-zinc-900 px-4 py-3 text-sm font-medium text-white transition hover:bg-zinc-800 dark:bg-zinc-100  dark:hover:bg-zinc-200"
+                    className=" bg-zinc-900 px-4 py-3 text-sm font-medium text-white transition hover:bg-zinc-800"
                 >
                     Send Email
                 </button>

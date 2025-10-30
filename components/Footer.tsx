@@ -6,16 +6,16 @@ function Footer() {
     const year = useMemo(() => new Date().getFullYear(), []);
 
     return (
-        <footer className="border-t border-zinc-200/60 bg-white/60 py-10 backdrop-blur dark:border-white/10 dark:bg-zinc-950/60">
+        <footer className=" py-10 backdrop-blur">
             <div className="mx-auto flex w-full max-w-4xl flex-col items-center justify-between gap-6 px-6 sm:flex-row">
-                <p className="text-sm text-zinc-200 dark:text-zinc-200">
+                <p className="text-sm text-zinc-200">
                     © {year} Justin Kahrs. All rights reserved.
                 </p>
                 <div className="flex items-center gap-4">
                     <a
                         href="https://github.com/justinkahrs"
                         aria-label="GitHub"
-                        className="rounded-full p-2 hover:bg-zinc-200/60 dark:hover:bg-zinc-800/80"
+                        className="rounded-full p-2  bg-green-300 hover:bg-zinc-200/60 "
                         target="_blank"
                         rel="noopener noreferrer"
                     >
@@ -24,7 +24,7 @@ function Footer() {
                     <a
                         href="https://www.linkedin.com/in/justin-kahrs"
                         aria-label="LinkedIn"
-                        className="rounded-full p-2 hover:bg-zinc-200/60 dark:hover:bg-zinc-800/80"
+                        className="rounded-full p-2  bg-green-300 hover:bg-zinc-200/60 "
                         target="_blank"
                         rel="noopener noreferrer"
                     >
