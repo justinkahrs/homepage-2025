@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import { useScroll, useMotionValueEvent } from "framer-motion";
-import About from "@/components/About";
+import Skills from "@/components/Skills";
 import Experience from "@/components/Experience";
 import Home from "@/components/Home";
 import Contact from "@/components/Contact";
@@ -13,7 +13,7 @@ export default function App() {
   const [pendingTarget, setPendingTarget] = useState<string | null>(null);
   const { scrollY } = useScroll();
   const updateActiveFromScroll = () => {
-    const ids = ["home", "about", "experience", "contact"] as const;
+    const ids = ["home", "skills", "experience", "contact"] as const;
     // If a click initiated the scroll, freeze the active state to that target
     // and ignore all scroll-based calculations until the scroll ends.
     if (pendingTarget) {
@@ -82,7 +82,7 @@ export default function App() {
       />
       <main className="mx-auto flex min-h-screen w-full max-w-4xl flex-col gap-32 px-6 pb-24 pt-36 sm:pt-40">
         <Home />
-        <About />
+        <Skills />
         <Experience />
         <Contact />
       </main>

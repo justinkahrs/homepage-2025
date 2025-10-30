@@ -23,7 +23,7 @@ function Experience() {
             Download Resume (PDF)
           </a>
         </div>
-        <ol className="relative mt-6 space-y-8 border-l border-orange-300 pl-6 dark:border-orange-800">
+        <ol className="relative mt-6 space-y-8 border-l border-green-300">
           {[
             {
               role: "Creator / Solo-Developer",

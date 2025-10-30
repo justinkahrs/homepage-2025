@@ -11,7 +11,7 @@
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
@@ -19,7 +19,7 @@
     --gradient-a: #ffffff;
     --gradient-b: #777777;
   }
-}
+} */
 
 body {
   background-color: var(--background);
@@ -62,8 +62,8 @@ h1 {
 /* Button defaults */
 button[type="button"],
 a[type="button"] {
-  background-color: orange;
-  border: 1px solid orange;
+  background-color: lab(86.9953 -47.2691 25.0054);
+  border: 1px solid lab(86.9953 -47.2691 25.0054);
   color: #000000;
   cursor: pointer;
 }
@@ -74,8 +74,8 @@ a[type="button"]:hover {
 }
 @media (prefers-color-scheme: dark) {
   button[type="button"] {
-    background-color: orange;
-    border: 1px solid orange;
+    background-color: lab(86.9953 -47.2691 25.0054);
+    border: 1px solid lab(86.9953 -47.2691 25.0054);
     color: #000000;
   }
   button[type="button"]:hover {
