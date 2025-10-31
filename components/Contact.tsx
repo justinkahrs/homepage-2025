@@ -22,7 +22,7 @@ function Contact() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true, amount: 0.4 }}
                         transition={{ duration: 0.5 }}
-                        className="lg:text-5xl text-4xl text-center text-gray-300 italic tracking-tight uppercase"
+                        className="text-4xl text-center text-gray-300 italic tracking-tight uppercase"
 
                     >
                         & Collaborate
