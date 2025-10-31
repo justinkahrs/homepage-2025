@@ -52,15 +52,13 @@ function Skills() {
                     </div>
                     <div className="sm:max-w-sm sm:text-left">
                         <p className="text-2xl text-white">
-                            I design for humans and code for scale. My services are fueled by the{" "}
-                            <span
+                            I design for humans and code for scale. My services are accesible and dependable because I give a <span
                                 className="relative inline-block cursor-pointer select-none group"
                                 tabIndex={0}
                             >
-                                <span className="relative z-10">fucks</span>
+                                <span className="relative z-10">shit</span>
                                 <span className="absolute inset-0 z-20 rounded-sm bg-white/20 backdrop-blur-sm transition-opacity duration-200 group-hover:opacity-0 group-focus:opacity-0" />
-                            </span>{" "}
-                            I give.
+                            </span>.
                         </p>
                     </div>
                 </div>
