@@ -12,7 +12,7 @@ function Contact() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true, amount: 0.4 }}
                         transition={{ duration: 0.5 }}
-                        className={`${gloock.className} tracking-wider text-8xl font-semibold text-center text-green-300`}
+                        className={`${gloock.className} tracking-wider text-5xl font-semibold text-center text-green-300 uppercase`}
 
                     >
                         Contact
@@ -22,10 +22,10 @@ function Contact() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true, amount: 0.4 }}
                         transition={{ duration: 0.5 }}
-                        className="text-5xl  text-center text-gray-300 italic tracking-tight"
+                        className="lg:text-5xl text-4xl text-center text-gray-300 italic tracking-tight uppercase"
 
                     >
-                        Me
+                        & Collaborate
                     </motion.h2>
                 </div>
                 <ContactForm />

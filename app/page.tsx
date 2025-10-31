@@ -4,6 +4,7 @@ import { useScroll, useMotionValueEvent } from "framer-motion";
 import Skills from "@/components/Skills";
 import Experience from "@/components/Experience";
 import Home from "@/components/Home";
+import Quote from "@/components/Quote";
 import Contact from "@/components/Contact";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
@@ -33,7 +34,7 @@ export default function App() {
       return;
     }
     // Normal behavior: choose the section closest to a mid-viewport anchor.
-    const targetY = window.innerHeight * 0.35;
+    const targetY = window.innerHeight * 0.2;
     let bestId: string | null = null;
     let bestDist = Infinity;
     for (const id of ids) {

@@ -26,7 +26,7 @@ function ContactForm() {
                     name="name"
                     required
                     autoComplete="name"
-                    className="mt-2 w-full border border-green-300 bg-gray-400 px-3 py-2 text-sm focus:border-zinc-500"
+                    className="mt-2 w-full border border-green-300 bg-transparent text-gray-100 px-3 py-2 text-sm focus:border-zinc-500"
                     placeholder="Your name"
                 />
             </div>
@@ -43,7 +43,7 @@ function ContactForm() {
                     type="email"
                     required
                     autoComplete="email"
-                    className="mt-2 w-full border border-green-300 bg-gray-400 px-3 py-2 text-sm outline-none  focus:border-zinc-500 "
+                    className="mt-2 w-full border border-green-300 bg-transparent text-gray-100 px-3 py-2 text-sm outline-none  focus:border-zinc-500 "
                     placeholder="you@example.com"
                 />
             </div>
@@ -59,7 +59,7 @@ function ContactForm() {
                     name="message"
                     rows={5}
                     required
-                    className="mt-2 w-full border border-green-300 bg-gray-400 px-3 py-2 text-sm outline-none  focus:border-zinc-500 "
+                    className="mt-2 w-full border border-green-300 bg-transparent text-gray-100 px-3 py-2 text-sm outline-none  focus:border-zinc-500 "
                     placeholder="Tell me about your project..."
                 />
             </div>

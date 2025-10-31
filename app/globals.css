@@ -47,6 +47,10 @@ a[type="button"] {
   border: 1px solid lab(86.9953 -47.2691 25.0054);
   color: #000000;
   cursor: pointer;
+  font-family: var(--font-staatliches), sans-serif;
+  font-weight: bolder;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
 }
 button[type="button"]:hover,
 a[type="button"]:hover {

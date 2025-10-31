@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { Roboto } from "next/font/google";
+import { Roboto, Staatliches } from "next/font/google";
 const roboto = Roboto({ subsets: ["latin"], weight: "400" });
-
 
 export const metadata: Metadata = {
   title: "Justin Kahrs",
@@ -16,7 +15,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={roboto.className}>
+      <body className={`${roboto.className}`}>
         <div className="bg"></div>
         <div className="bg bg2"></div>
         <div className="bg bg3"></div>
