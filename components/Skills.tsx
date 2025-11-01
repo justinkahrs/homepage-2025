@@ -56,7 +56,7 @@ function Skills() {
                                 className="relative inline-block cursor-pointer select-none group"
                                 tabIndex={0}
                             >
-                                <span className="relative z-10">shit</span>
+                                <span className="relative z-10">💩</span>
                                 <span className="absolute inset-0 z-20 rounded-sm bg-white/20 backdrop-blur-sm transition-opacity duration-200 group-hover:opacity-0 group-focus:opacity-0" />
                             </span>.
                         </p>

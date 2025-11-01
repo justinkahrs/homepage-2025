@@ -104,14 +104,27 @@ function Experience() {
                 <div className="timeline-middle text-green-900">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
+                    viewBox="0 0 120 150"
+                    x="0px"
+                    y="0px"
                     className="h-5 w-5"
                   >
-                    <path
-                      fillRule="evenodd"
-                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
-                      clipRule="evenodd"
+                    <circle cx="60" cy="60" r="60" fill="currentColor" />
+                    <polygon
+                      points="32.06 37.95 17.65 52.36 10 60.01 17.65 67.64 32.06 82.05 39.71 74.42 25.3 60.01 39.71 45.6 32.06 37.95"
+                      fill="#ffffff"
+                    />
+                    <polygon
+                      points="102.35 52.36 87.94 37.95 80.29 45.6 94.7 60.01 80.29 74.42 87.94 82.05 102.35 67.64 110 60.01 102.35 52.36"
+                      fill="#ffffff"
+                    />
+                    <rect
+                      x="27.91"
+                      y="54.59"
+                      width="64.19"
+                      height="10.81"
+                      transform="translate(-13.48 102.43) rotate(-75)"
+                      fill="#ffffff"
                     />
                   </svg>
                 </div>
