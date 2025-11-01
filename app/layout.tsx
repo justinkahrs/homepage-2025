@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Roboto, Staatliches } from "next/font/google";
+import BackgroundAnimation from "./BackgroundAnimation";
+
 const roboto = Roboto({ subsets: ["latin"], weight: "400" });
 
 export const metadata: Metadata = {
@@ -15,10 +17,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${roboto.className}`}>
-        <div className="bg"></div>
-        <div className="bg bg2"></div>
-        <div className="bg bg3"></div>
+      <body className={roboto.className}>
+        <BackgroundAnimation />
         <main className="content">{children}</main>
       </body>
     </html>

@@ -75,7 +75,7 @@ export default function Quote() {
               className="text-2xl text-black"
             >
               <span className="font-extrabold text-2xl ">62%</span> of
-              developers are frustrated by technical debt{" "}
+              developers are frustrated by technical debt.
               <sup>
                 <a
                   href="https://stackoverflow.blog/2025/01/01/developers-want-more-more-more-the-2024-results-from-stack-overflow-s-annual-developer-survey/"
@@ -86,7 +86,7 @@ export default function Quote() {
                   [1]
                 </a>
               </sup>
-              . I'm one of them. That’s why I build systems with clean abstractions
+              {" "}I'm one of them. That’s why I build systems with clean abstractions
               and predictable patterns, so we move fast and sustainably.
             </motion.p>
           </div>

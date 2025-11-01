@@ -1,44 +1,18 @@
-@import "tailwindcss";:root {
+@import "tailwindcss";
+@plugin "daisyui" {
+  exclude: rootcolor;
+}
+
+:root {
   --background: #13a93e;
   --foreground: #171717;
   --gradient-a: #000000;
   --gradient-b: #292b2a;
 }
-
 body {
   background-color: var(--background);
   color: var(--foreground);
   min-height: 100%;
-}
-.bg {
-  animation: slide 24s ease-in-out infinite alternate;
-  background-image: linear-gradient(-35deg, var(--gradient-a) 70%, var(--gradient-b) 30%);
-  bottom: 0;
-  left: -50%;
-  opacity: .5;
-  position: fixed;
-  right: -50%;
-  top: 0;
-  z-index: -1;
-  filter: blur(18px);
-  -webkit-filter: blur(18px);
-}
-.bg2 {
-  animation-direction: alternate-reverse;
-  animation-duration: 16s;
-}
-.bg3 {
-  animation-duration: 20s;
-}
- 
-
-@keyframes slide {
-  0% {
-    transform: translateX(-25%);
-  }
-100% {
-    transform: translateX(25%);
-  }
 }
 /* Button defaults */
 button[type="button"],

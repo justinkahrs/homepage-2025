@@ -1,7 +1,9 @@
 import { motion } from "motion/react";
 import { Gloock } from "next/font/google";
 import Quote from "./Quote";
+
 const gloock = Gloock({ subsets: ["latin"], weight: "400" });
+
 function Experience() {
   const jobs = [
     {
@@ -57,9 +59,10 @@ function Experience() {
       link: "https://www.gvsu.edu",
     },
   ];
+
   return (
     <section id="experience" className="scroll-mt-28 w-full">
-      <div className="relative left-1/2 right-1/2 -mx-[50vw] w-screen border border-zinc-200/60 bg-white py-40 mb-30 ">
+      <div className="relative left-1/2 right-1/2 -mx-[50vw] w-screen border border-zinc-200/60 bg-white py-40 mb-30">
         <div className="mx-auto max-w-4xl px-6 sm:px-12">
           <div className="pb-9">
             <motion.h2
@@ -76,58 +79,67 @@ function Experience() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.4 }}
               transition={{ duration: 0.5 }}
-              className={`${gloock.className} tracking-wider text-5xl font-semibold text-left text-green-900 uppercase`}
+              className={`${gloock.className} tracking-wider text-5xl font-semibold text-left text-green-300 uppercase`}
             >
               Experience
             </motion.h2>
           </div>
+
           <a
             className="text-center p-2 text-sm"
             download
             href="/Justin_Kahrs_resume.pdf"
             type="button"
-
           >
             Download Resume (PDF)
           </a>
-          <div className="flex flex-col items-center lg:flex-row lg:justify-end">
-            <ol className="relative mt-11 w-full space-y-11 border-l border-green-300 lg:w-1/2">
-              {jobs.map((job, i) => (
-                <li key={i} className="ml-2 relative">
-                  <span className="absolute -left-[7px] translate-y-2.5 -translate-x-1.5 h-2 w-2 rounded-full border border-green-900 bg-green-900" />
-                  <motion.div
-                    initial={{ opacity: 0, y: 12 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, amount: 0.4 }}
-                    transition={{ duration: 0.5 }}
-                    className="group"
+
+          <ul className="timeline timeline-vertical timeline-compact mt-20">
+            {jobs.map((job, i) => (
+              <li key={i}>
+                {i !== 0 && <hr />}
+                <div className="timeline-start text-sm text-zinc-500">
+                  {job.period}
+                </div>
+                <div className="timeline-middle text-green-900">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                    className="h-5 w-5"
                   >
-                    <div className="flex flex-wrap items-baseline justify-between gap-x-4">
-                      <h3 className="text-lg font-medium">
-                        <a
-                          href={job.link}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="hover:underline"
-                        >
-                          {job.role}{" "}
-                          <span className="text-zinc-500 text-1xl">— {job.company}</span>
-                        </a>
-                      </h3>
-                      <span className="text-sm text-zinc-500">
-                        {job.period}
+                    <path
+                      fillRule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                </div>
+                <div className="timeline-end">
+                  <h3 className="text-lg font-medium leading-snug">
+                    <a
+                      href={job.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:underline"
+                    >
+                      {job.role}{" "}
+                      <span className="text-zinc-500 text-1xl">
+                        — {job.company}
                       </span>
-                    </div>
-                    <p className="mt-2 text-zinc-600">{job.blurb}</p>
-                  </motion.div>
-                </li>
-              ))}
-            </ol>
-          </div>
+                    </a>
+                  </h3>
+                  <div className="mt-2 text-zinc-600 text-sm">{job.blurb}</div>
+                </div>
+                {i !== jobs.length - 1 && <hr />}
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
       <Quote />
     </section>
   );
 }
+
 export default Experience;
