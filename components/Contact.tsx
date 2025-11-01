@@ -5,7 +5,7 @@ const gloock = Gloock({ subsets: ["latin"], weight: "400" });
 function Contact() {
     return (
         <section id="contact" className="scroll-mt-28">
-            <div className="border-4 border-green-300 p-8 py-40 bg-transparent">
+            <div className="border-4 border-green-300 p-8 mt-11 py-40 bg-transparent">
                 <div className="mb-20">
                     <motion.h2
                         initial={{ opacity: 0, y: 10 }}

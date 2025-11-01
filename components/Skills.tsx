@@ -28,7 +28,7 @@ const SKILL_SECTIONS = [
 function Skills() {
     return (
         <section id="skills" className="scroll-mt-28">
-            <div className="p-8">
+            <div className="p-8 py-40 pb-11">
                 <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
                     <div className="flex flex-col">
                         <motion.h2
@@ -52,7 +52,7 @@ function Skills() {
                     </div>
                     <div className="sm:max-w-sm sm:text-left">
                         <p className="text-2xl text-white">
-                            I design for humans and code for scale. My services are accesible and dependable because I give a <span
+                            I design for humans and code for scale. My services are accessible and dependable because I give a <span
                                 className="relative inline-block cursor-pointer select-none group"
                                 tabIndex={0}
                             >

@@ -7,7 +7,7 @@ function Experience() {
     {
       role: "Creator / Solo-Developer",
       company: "o11n (AI-augmented IDE)",
-      period: "Apr 2025 — Present",
+      period: "April 2025 — Present",
       blurb:
         "Designed and built o11n, an AI-augmented IDE that speeds up development using a custom prompting interface and LLM integrations.",
       link: "https://o11n.life",
@@ -15,7 +15,7 @@ function Experience() {
     {
       role: "Senior Full-Stack Engineer",
       company: "Amastay AI",
-      period: "Mar 2025 — Jun 2025",
+      period: "March 2025 — June 2025",
       blurb: (
         <>
           Built the product POC (
@@ -35,7 +35,7 @@ function Experience() {
     {
       role: "Senior Frontend Engineer",
       company: "Ridecell",
-      period: "Jan 2018 — Oct 2024",
+      period: "January 2018 — October 2024",
       blurb:
         "Shipped next-generation shared-mobility solutions and maintained fleet-automation, booking, and operations products for a Fortune Global 500 client.",
       link: "https://www.ridecell.com",
@@ -43,15 +43,15 @@ function Experience() {
     {
       role: "Senior Frontend Engineer",
       company: "Indiana University",
-      period: "Jul 2015 — Jan 2018",
+      period: "July 2015 — January 2018",
       blurb:
         "Built internal data tools and dashboards, integrated Tableau/Denodo, and followed HIPAA/FERPA-compliant practices.",
       link: "https://www.iu.edu",
     },
     {
       role: "Server Support Technician",
-      company: "GVSU",
-      period: "Aug 2010 — Jul 2015",
+      company: "Grand Valley State University",
+      period: "August 2010 — July 2015",
       blurb:
         "Provisioned and maintained physical servers and wrote automation scripts for routine maintenance.",
       link: "https://www.gvsu.edu",
@@ -59,9 +59,9 @@ function Experience() {
   ];
   return (
     <section id="experience" className="scroll-mt-28 w-full">
-      <div className="relative left-1/2 right-1/2 -mx-[50vw] w-screen border border-zinc-200/60 bg-white py-40">
+      <div className="relative left-1/2 right-1/2 -mx-[50vw] w-screen border border-zinc-200/60 bg-white py-40 mb-30 ">
         <div className="mx-auto max-w-4xl px-6 sm:px-12">
-          <div className="pb-12">
+          <div className="pb-9">
             <motion.h2
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -76,7 +76,7 @@ function Experience() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.4 }}
               transition={{ duration: 0.5 }}
-              className={`${gloock.className} tracking-wider text-5xl font-semibold text-left text-green-300 uppercase`}
+              className={`${gloock.className} tracking-wider text-5xl font-semibold text-left text-green-900 uppercase`}
             >
               Experience
             </motion.h2>
@@ -86,14 +86,15 @@ function Experience() {
             download
             href="/Justin_Kahrs_resume.pdf"
             type="button"
+
           >
             Download Resume (PDF)
           </a>
           <div className="flex flex-col items-center lg:flex-row lg:justify-end">
-            <ol className="relative mt-6 w-full space-y-8 border-l border-green-300 lg:w-1/2">
+            <ol className="relative mt-11 w-full space-y-11 border-l border-green-300 lg:w-1/2">
               {jobs.map((job, i) => (
                 <li key={i} className="ml-2 relative">
-                  <span className="absolute -left-[7px] translate-y-2 -translate-x-2 h-3 w-3 rounded-full border border-zinc-300 bg-white" />
+                  <span className="absolute -left-[7px] translate-y-2.5 -translate-x-1.5 h-2 w-2 rounded-full border border-green-900 bg-green-900" />
                   <motion.div
                     initial={{ opacity: 0, y: 12 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -110,7 +111,7 @@ function Experience() {
                           className="hover:underline"
                         >
                           {job.role}{" "}
-                          <span className="text-zinc-500">— {job.company}</span>
+                          <span className="text-zinc-500 text-1xl">— {job.company}</span>
                         </a>
                       </h3>
                       <span className="text-sm text-zinc-500">

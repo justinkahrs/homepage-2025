@@ -68,7 +68,7 @@ function ContactForm() {
                     type="button"
                     className=" bg-zinc-900 px-4 py-3 text-sm font-medium text-white transition hover:bg-zinc-800"
                 >
-                    Send Email
+                    Send
                 </button>
             </div>
         </form>

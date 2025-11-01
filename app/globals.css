@@ -1,8 +1,8 @@
 @import "tailwindcss";:root {
-  --background: #ffffff;
+  --background: #13a93e;
   --foreground: #171717;
   --gradient-a: #000000;
-  --gradient-b: #2b2929;
+  --gradient-b: #292b2a;
 }
 
 body {

@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 const gloock = Gloock({ subsets: ["latin"], weight: "400" });
 export default function Quote() {
   return (
-    <section className="relative w-screen left-[50%] right-[50%] -ml-[50vw] -mr-[50vw] -mt-32 bg-green-300 text-black py-24 px-6 sm:px-12">
+    <section className="relative w-screen left-[50%] right-[50%] -ml-[50vw] -mr-[50vw] -mt-32 bg-green-300 text-black py-40 px-6 sm:px-12">
       <div className="mx-auto max-w-4xl">
         <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <div className="flex flex-col">
@@ -17,7 +17,7 @@ export default function Quote() {
               Automating{" "}
               <em>
                 <motion.span
-                  className="bg-[linear-gradient(-35deg,#4ade80,black)] bg-clip-text text-transparent"
+                  className="bg-[linear-gradient(-35deg,#4ade80,#05240D)] bg-clip-text text-transparent"
                   style={{
                     backgroundSize: "100% 200%",
                     backgroundPosition: "0% 0%",
@@ -46,7 +46,7 @@ export default function Quote() {
               Building{" "}
               <em>
                 <motion.span
-                  className="bg-[linear-gradient(-35deg,#4ade80,black)] bg-clip-text text-transparent"
+                  className="bg-[linear-gradient(-35deg,#4ade80,#05240D)] bg-clip-text text-transparent"
                   style={{
                     backgroundSize: "100% 200%",
                     backgroundPosition: "0% 0%",

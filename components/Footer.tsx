@@ -9,7 +9,7 @@ function Footer() {
         <footer className=" py-10 backdrop-blur">
             <div className="mx-auto flex w-full max-w-4xl flex-col items-center justify-between gap-6 px-6 sm:flex-row">
                 <p className="text-sm text-zinc-200">
-                    © {year} Justin Kahrs. All rights reserved.
+                    © {year} Made thoughtfully by Justin Kahrs. All rights reserved, unless it's open source.
                 </p>
                 <div className="flex items-center gap-4">
                     <a

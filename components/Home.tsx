@@ -46,7 +46,7 @@ function Home() {
                         className="mt-8 flex flex-wrap gap-3 justify-center"
                     >
                         <button
-                            className="w-60 bg-zinc-900 px-5 py-2.5 text-sm font-medium text-white transition hover:bg-zinc-800"
+                            className="w-50 bg-zinc-900 px-4 py-3 text-sm font-medium text-white transition hover:bg-zinc-800"
                             onClick={() => handleScroll("#experience")}
                             type="button"
                         >
@@ -55,7 +55,7 @@ function Home() {
                         <button
                             // type="button"
                             onClick={() => handleScroll("#contact")}
-                            className="w-60 border font-bold border-zinc-300 bg-transparent px-5 py-2.5 text-sm text-white transition hover:bg-zinc-800"
+                            className="w-50 border font-bold border-zinc-300 bg-transparent px-4 py-3 text-sm text-white transition hover:bg-zinc-800"
                         >
                             CONTACT
                         </button>
