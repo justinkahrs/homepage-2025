@@ -5,23 +5,23 @@ const gloock = Gloock({ subsets: ["latin"], weight: "400" });
 const SKILL_SECTIONS = [
     {
         title: "Frontend",
-        items: ["React", "Next.js", "Tailwind/DaisyUI", "Framer Motion"],
+        items: ["React", "Next.js", "Tailwind/Material", "Framer Motion"],
     },
     {
         title: "Backend",
-        items: ["Python", "Django", "REST", "PostgreSQL"],
+        items: ["Python", "Django", "Rust", "PostgreSQL"],
     },
     {
-        title: "Systems",
-        items: ["Rust", "CLI tooling", "Perf-minded code", "Github Actions"],
+        title: "Business",
+        items: ["Stripe/Braintree", "LLM integrations", "Make/Zapier", "PandaDocs"],
     },
     {
-        title: "Testing & Ops",
+        title: "Testing & UX",
         items: [
             "Cypress/Jest",
-            "CI/CD",
-            "Performance budgets",
-            "Accessibility as baseline",
+            "Github Actions",
+            "Internationalization",
+            "Accessibility",
         ],
     },
 ];

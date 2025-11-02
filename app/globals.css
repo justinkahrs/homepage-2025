@@ -16,6 +16,7 @@ body {
 }
 /* Button defaults */
 button[type="button"],
+button[type="submit"],
 a[type="button"] {
   background-color: lab(86.9953 -47.2691 25.0054);
   border: 1px solid lab(86.9953 -47.2691 25.0054);
