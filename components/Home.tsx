@@ -6,7 +6,7 @@ const gloock = Gloock({ subsets: ["latin"], weight: "400" });
 function Home() {
     return (
         <section id="home" className="scroll-mt-28">
-            <div className="flex justify-center">
+            <div className="flex justify-center pt-18">
                 <div className="p-10 text-white text-center">
                     <motion.h1
                         initial={{ opacity: 0, y: 16 }}
@@ -35,7 +35,7 @@ function Home() {
                         initial={{ opacity: 0, y: 12 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.1, duration: 0.6, ease: "easeOut" }}
-                        className="mt-4 text-4xl text-gray-300 italic tracking-tight "
+                        className="mt-4 text-4xl text-gray-300 tracking-tight "
                     >
                         I'm a senior software engineer.
                     </motion.p>
