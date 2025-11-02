@@ -67,7 +67,7 @@ function Experience() {
         className="relative left-1/2 right-1/2 -mx-[50vw] w-screen border border-zinc-200/60 bg-white py-40 mb-30"
       >
         <div className="mx-auto max-w-4xl px-6 sm:px-12">
-          <div className="pb-9">
+          <div className="pb-9 overflow-x-hidden">
             <motion.h2
               initial={{ opacity: 0, y: 10, x: -40 }}
               whileInView={{ opacity: 1, y: 0, x: 0 }}
