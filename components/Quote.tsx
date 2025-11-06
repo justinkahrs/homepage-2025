@@ -3,21 +3,29 @@ import { motion } from "framer-motion";
 const gloock = Gloock({ subsets: ["latin"], weight: "400" });
 export default function Quote() {
   return (
-    <section className="relative w-screen left-[50%] right-[50%] -ml-[50vw] -mr-[50vw] -mt-32 bg-green-300 text-black py-40 px-6 sm:px-12">
+    <section
+      className="relative right-[50%] left-[50%] -mt-32 -mr-[50vw] -ml-[50vw]
+        w-screen bg-green-300 px-6 py-40 text-black sm:px-12"
+    >
       <div className="mx-auto max-w-4xl">
-        <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+        <div
+          className="flex flex-col gap-4 sm:flex-row sm:items-center
+            sm:justify-between"
+        >
           <div className="flex flex-col">
             <motion.h2
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.4 }}
               transition={{ duration: 0.6 }}
-              className={`${gloock.className} tracking-wider lg:text-5xl text-4xl font-semibold text-left`}
+              className={`${gloock.className} text-left text-4xl font-semibold
+                tracking-wider lg:text-5xl`}
             >
               Automating{" "}
               <em>
                 <motion.span
-                  className="bg-[linear-gradient(-35deg,#4ade80,#05240D)] bg-clip-text text-transparent"
+                  className="bg-[linear-gradient(-35deg,#4ade80,#05240D)]
+                    bg-clip-text text-transparent"
                   style={{
                     backgroundSize: "100% 200%",
                     backgroundPosition: "0% 0%",
@@ -41,12 +49,14 @@ export default function Quote() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.4 }}
               transition={{ duration: 0.6 }}
-              className={`${gloock.className} tracking-wider lg:text-5xl text-4xl font-semibold text-left mt-4`}
+              className={`${gloock.className} mt-4 text-left text-4xl
+                font-semibold tracking-wider lg:text-5xl`}
             >
               Building{" "}
               <em>
                 <motion.span
-                  className="bg-[linear-gradient(-35deg,#4ade80,#05240D)] bg-clip-text text-transparent"
+                  className="bg-[linear-gradient(-35deg,#4ade80,#05240D)]
+                    bg-clip-text text-transparent"
                   style={{
                     backgroundSize: "100% 200%",
                     backgroundPosition: "0% 0%",
@@ -74,8 +84,8 @@ export default function Quote() {
               transition={{ duration: 0.8 }}
               className="text-2xl text-black"
             >
-              <span className="font-extrabold text-2xl ">62%</span> of
-              developers are frustrated by technical debt.
+              <span className="text-2xl font-extrabold">62%</span> of developers
+              are frustrated by technical debt.
               <sup>
                 <a
                   href="https://stackoverflow.blog/2025/01/01/developers-want-more-more-more-the-2024-results-from-stack-overflow-s-annual-developer-survey/"
@@ -85,9 +95,10 @@ export default function Quote() {
                 >
                   [1]
                 </a>
-              </sup>
-              {" "}I'm one of them. That’s why I build systems with clean abstractions
-              and predictable patterns, so we move fast and sustainably.
+              </sup>{" "}
+              I'm one of them. That’s why I build systems with clean
+              abstractions and predictable patterns, so we move fast and
+              sustainably.
             </motion.p>
           </div>
         </div>

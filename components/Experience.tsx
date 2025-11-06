@@ -10,9 +10,22 @@ function Experience() {
       role: "Creator / Solo-Developer",
       company: "o11n (AI-augmented IDE)",
       period: "April 2025 — Present",
-      blurb:
-        "Designed and built o11n, an AI-augmented IDE that speeds up development using a custom prompting interface and LLM integrations.",
+      blurb: (
+        <>
+          Designed and built o11n, an AI-augmented IDE that speeds up
+          development using a custom prompting interface and LLM integrations.{" "}
+          <a
+            href="https://www.youtube.com/watch?v=skla9HZTTfc"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline"
+          >
+            See demo on YouTube.
+          </a>
+        </>
+      ),
       link: "https://o11n.life",
+      location: "Grand Rapids, MI (Remote)",
     },
     {
       role: "Senior Full-Stack Engineer",
@@ -27,12 +40,13 @@ function Experience() {
             rel="noopener noreferrer"
             className="underline"
           >
-            demo.amastay.ai
+            see live demo
           </a>
           ) and the Next.js dashboard for hosts to manage properties.
         </>
       ),
       link: "https://amastay.ai",
+      location: "San Francisco, CA (Remote)",
     },
     {
       role: "Senior Frontend Engineer",
@@ -41,6 +55,7 @@ function Experience() {
       blurb:
         "Shipped next-generation shared-mobility solutions and maintained fleet-automation, booking, and operations products for a Fortune Global 500 client.",
       link: "https://www.ridecell.com",
+      location: "San Francisco, CA (Remote)",
     },
     {
       role: "Senior Frontend Engineer",
@@ -49,6 +64,7 @@ function Experience() {
       blurb:
         "Built internal data tools and dashboards, integrated Tableau/Denodo, and followed HIPAA/FERPA-compliant practices.",
       link: "https://www.iu.edu",
+      location: "Bloomington, IN",
     },
     {
       role: "Server Support Technician",
@@ -57,23 +73,26 @@ function Experience() {
       blurb:
         "Provisioned and maintained physical servers and wrote automation scripts for routine maintenance.",
       link: "https://www.gvsu.edu",
+      location: "Allendale, MI",
     },
   ];
 
   return (
-    <section className="scroll-mt-28 w-full">
+    <section className="w-full scroll-mt-28">
       <div
         id="experience"
-        className="relative left-1/2 right-1/2 -mx-[50vw] w-screen border border-zinc-200/60 bg-white py-40 mb-30"
+        className="relative right-1/2 left-1/2 -mx-[50vw] mb-30 w-screen border
+          border-zinc-200/60 bg-white py-40"
       >
         <div className="mx-auto max-w-4xl px-6 sm:px-12">
-          <div className="pb-9 overflow-x-hidden">
+          <div className="overflow-x-hidden pb-9">
             <motion.h2
               initial={{ opacity: 0, y: 10, x: -40 }}
               whileInView={{ opacity: 1, y: 0, x: 0 }}
               viewport={{ once: true, amount: 0.6 }}
               transition={{ duration: 0.7 }}
-              className="text-4xl text-left text-gray-300 italic tracking-tight uppercase"
+              className="text-left text-4xl tracking-tight text-gray-300
+                uppercase italic"
             >
               Professional
             </motion.h2>
@@ -82,7 +101,8 @@ function Experience() {
               whileInView={{ opacity: 1, y: 0, x: 0 }}
               viewport={{ once: true, amount: 0.6 }}
               transition={{ duration: 0.7 }}
-              className={`${gloock.className} tracking-wider text-5xl font-semibold text-left text-green-900 uppercase`}
+              className={`${gloock.className} text-left text-5xl font-semibold
+                tracking-wider text-green-900 uppercase`}
             >
               Experience
             </motion.h2>
@@ -97,7 +117,7 @@ function Experience() {
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 400 500"
-              className="h-5 w-5 mt-1"
+              className="mt-1 h-5 w-5"
             >
               <g>
                 <path d="M358.8,272.2v70.3c0,1.4-0.2,2.7-0.5,3.9v0c0,0,0,0,0,0c-1.4,6.9-7.5,12.1-14.7,12.1H56.3c-7.7,0-14.1-5.9-14.9-13.4   c-0.2-0.9-0.2-1.7-0.2-2.7v-70.3c0-8.3,6.8-15,15-15c4.1,0,7.9,1.7,10.6,4.4c2.7,2.7,4.4,6.5,4.4,10.6v56.3h257.7v-56.3   c0-8.3,6.8-15,15-15c4.1,0,7.9,1.7,10.6,4.4C357.1,264.3,358.8,268.1,358.8,272.2z" />
@@ -110,8 +130,7 @@ function Experience() {
           <ul className="timeline timeline-vertical timeline-compact mt-20">
             {jobs.map((job, i) => (
               <li key={i}>
-                {i !== 0 && <hr />}
-                <div className="timeline-start text-sm text-green-900 pt-1">
+                <div className="timeline-start pt-1 text-sm text-green-900">
                   {job.period}
                 </div>
                 <div className="timeline-middle text-green-900">
@@ -120,7 +139,7 @@ function Experience() {
                     viewBox="0 0 120 150"
                     x="0px"
                     y="0px"
-                    className="h-5 w-5 mt-2"
+                    className="mt-2 h-5 w-5"
                   >
                     <circle cx="60" cy="60" r="60" fill="currentColor" />
                     <polygon
@@ -142,7 +161,7 @@ function Experience() {
                   </svg>
                 </div>
                 <div className="timeline-end">
-                  <h3 className="text-lg font-medium leading-snug">
+                  <h3 className="text-lg leading-snug font-medium">
                     <a
                       href={job.link}
                       target="_blank"
@@ -150,14 +169,17 @@ function Experience() {
                       className="hover:underline"
                     >
                       {job.role}{" "}
-                      <span className="text-zinc-500 text-1xl">
+                      <span className="text-1xl text-zinc-500 text-nowrap">
                         — {job.company}
                       </span>
                     </a>
                   </h3>
-                  <div className="mt-2 text-zinc-600 text-sm">{job.blurb}</div>
+                  <h4 className="mt-1 text-sm">{job.location}</h4>
+                  <div className="mt-4 text-sm text-zinc-600">{job.blurb}</div>
                 </div>
-                {i !== jobs.length - 1 && <hr />}
+                {i !== jobs.length - 1 && (
+                  <hr className="border-2 border-green-300/30" />
+                )}
               </li>
             ))}
           </ul>

@@ -1,7 +1,6 @@
-
 const handleScroll = (href: string) => {
-    const el = document.querySelector(href);
-    if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+  const el = document.querySelector(href);
+  if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
 };
 
-export default handleScroll
+export default handleScroll;

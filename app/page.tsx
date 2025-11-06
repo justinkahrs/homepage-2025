@@ -81,7 +81,10 @@ export default function App() {
         setActive={setActive}
         setPendingTarget={setPendingTarget}
       />
-      <main className="mx-auto flex min-h-screen w-full max-w-4xl flex-col gap-32 px-6 pb-24 pt-36 sm:pt-40">
+      <main
+        className="mx-auto flex min-h-screen w-full max-w-4xl flex-col gap-32
+          px-6 pt-36 pb-24 sm:pt-40"
+      >
         <Home />
         <Skills />
         <Experience />
