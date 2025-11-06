@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import "./globals.css";
 import { Roboto, Staatliches } from "next/font/google";
 import BackgroundAnimation from "./BackgroundAnimation";
@@ -37,6 +38,7 @@ export default function RootLayout({
         <BackgroundAnimation />
         <main className="content">{children}</main>
       </body>
+      <GoogleAnalytics gaId="GTM-TWKC7GGZ" />
     </html>
   );
 }
