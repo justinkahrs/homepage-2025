@@ -8,6 +8,22 @@ const roboto = Roboto({ subsets: ["latin"], weight: "400" });
 export const metadata: Metadata = {
   title: "Justin Kahrs",
   description: "Senior Software Engineer",
+  metadataBase: new URL("https://www.justinkahrs.com"),
+  openGraph: {
+    title: "Justin Kahrs",
+    description: "Senior Software Engineer",
+    url: "https://www.justinkahrs.com",
+    type: "website",
+    siteName: "Justin Kahrs",
+    images: [
+      {
+        url: "/1024x1024.png",
+        width: 1024,
+        height: 1024,
+        alt: "Hire this guy!",
+      },
+    ],
+  },
 };
 
 export default function RootLayout({
