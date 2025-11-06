@@ -38,7 +38,7 @@ export default function RootLayout({
         <BackgroundAnimation />
         <main className="content">{children}</main>
       </body>
-      <GoogleAnalytics gaId="GTM-TWKC7GGZ" />
+      <GoogleAnalytics gaId="G-QRZ16VQ70B" />
     </html>
   );
 }
