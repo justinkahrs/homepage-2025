@@ -107,7 +107,6 @@ function Experience() {
               Experience
             </motion.h2>
           </div>
-
           <a
             className="inline-flex items-center gap-2 p-2 text-sm"
             download

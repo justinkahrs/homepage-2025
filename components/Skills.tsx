@@ -1,6 +1,7 @@
 import { motion } from "motion/react";
 import TechCard from "./TechCard";
 import { Gloock } from "next/font/google";
+import TechMarquee from "./TechMarquee";
 const gloock = Gloock({ subsets: ["latin"], weight: "400" });
 const SKILL_SECTIONS = [
   {
@@ -75,7 +76,8 @@ function Skills() {
             </p>
           </div>
         </div>
-        <div className="mt-20 grid grid-cols-1 gap-x-48 gap-y-12 sm:grid-cols-2">
+        <TechMarquee />
+        <div className="mt-20 grid grid-cols-1 gap-x-24 gap-y-12 sm:grid-cols-2">
           {SKILL_SECTIONS.map((section) => (
             <TechCard
               key={section.title}

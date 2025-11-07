@@ -1,5 +1,6 @@
 import { Gloock } from "next/font/google";
 import { motion } from "framer-motion";
+import ProjectCard from "./ProjectCard";
 const gloock = Gloock({ subsets: ["latin"], weight: "400" });
 export default function Quote() {
   return (
@@ -101,6 +102,20 @@ export default function Quote() {
               sustainably.
             </motion.p>
           </div>
+        </div>
+        <div className="mt-40 grid grid-cols-1 gap-4 sm:grid-cols-2">
+          <ProjectCard
+            href="https://blog.justinkahrs.com/projects/o11n/"
+            title="o11n - AI code assistant"
+            subtitle="Building my own AI tools for fun and (no) profit"
+            src="/o11n.jpg"
+          />
+          <ProjectCard
+            href="https://blog.justinkahrs.com/projects/rcs-demo/"
+            title="Amastay AI - RCS Demo"
+            subtitle="An interactive view of how an AI property manager would work"
+            src="/amastay.png"
+          />
         </div>
       </div>
     </section>
