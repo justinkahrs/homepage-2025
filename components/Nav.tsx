@@ -31,7 +31,7 @@ function Nav({ active, setActive, setPendingTarget }: NavProps) {
         >
           <div
             className="flex h-9 w-9 items-center justify-center rounded-full
-              bg-green-300 text-sm font-semibold text-black"
+              bg-green-300 text-sm font-semibold text-black cursor-pointer"
             onClick={() => {
               const id = "home";
               const el =
@@ -52,7 +52,7 @@ function Nav({ active, setActive, setPendingTarget }: NavProps) {
               <li key={item.href}>
                 <button
                   className={`relative px-4 py-2 text-sm font-medium text-white
-                  transition`}
+                  transition cursor-pointer`}
                   onClick={() => {
                     const id = item.href.replace("#", "");
                     const el =

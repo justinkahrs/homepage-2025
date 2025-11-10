@@ -48,7 +48,7 @@ function Home() {
           >
             <button
               className="w-50 bg-zinc-900 px-4 py-3 text-sm font-medium
-                text-white transition hover:bg-zinc-800"
+                text-white transition hover:bg-zinc-800 cursor-pointer"
               onClick={() => handleScroll("#experience")}
               type="button"
             >
@@ -59,7 +59,7 @@ function Home() {
               onClick={() => handleScroll("#contact")}
               className="w-50 border border-zinc-300 bg-transparent px-4 py-3
                 text-sm font-bold text-white backdrop-blur-3xl transition
-                hover:bg-zinc-800"
+                hover:bg-zinc-800 cursor-pointer"
             >
               CONTACT
             </button>
