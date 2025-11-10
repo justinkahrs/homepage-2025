@@ -174,9 +174,9 @@ export default function Quote() {
             rel="noopener noreferrer"
             className="inline-flex items-center border border-black/20
               bg-white/90 px-5 py-3 text-base font-semibold text-black shadow-sm
-              transition hover:bg-white"
+              transition hover:bg-white uppercase"
           >
-            See all projects on my blog
+            See all projects
           </a>
         </div>
       </div>
