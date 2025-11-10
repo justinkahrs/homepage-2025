@@ -13,6 +13,7 @@ export default function Quote() {
     image?: string;
   };
   const [items, setItems] = useState<RssItem[]>([]);
+  const [loading, setLoading] = useState(true);
   useEffect(() => {
     async function load() {
       try {
@@ -41,8 +42,10 @@ export default function Quote() {
           return tb - ta;
         });
         setItems(parsed);
+        setLoading(false);
       } catch {
         setItems([]);
+        setLoading(false);
       }
     }
     load();
@@ -147,17 +150,23 @@ export default function Quote() {
             </motion.p>
           </div>
         </div>
-        <div className="mt-40 grid grid-cols-1 gap-4 sm:grid-cols-2">
-          {items.slice(0, 4).map((item) => (
-            <ProjectCard
-              key={item.link}
-              href={item.link}
-              title={item.title}
-              subtitle={item.description}
-              src={item.image || "/o11n.jpg"}
-            />
-          ))}
-        </div>
+        {loading ? (
+          <div className="mt-40 flex justify-center">
+            <span className="loading loading-spinner loading-lg text-black"></span>
+          </div>
+        ) : (
+          <div className="mt-40 grid grid-cols-1 gap-4 sm:grid-cols-2">
+            {items.slice(0, 4).map((item) => (
+              <ProjectCard
+                key={item.link}
+                href={item.link}
+                title={item.title}
+                subtitle={item.description}
+                src={item.image || "/o11n.jpg"}
+              />
+            ))}
+          </div>
+        )}
         <div className="mt-8 flex justify-center">
           <a
             href="https://blog.justinkahrs.com"
