@@ -17,7 +17,7 @@ export default function TechMarquee() {
     <div
       aria-label="Technology Marquee"
       className="relative right-1/2 left-1/2 -mx-[50vw] w-screen my-10
-        overflow-hidden py-6"
+        overflow-x-hidden overflow-y-visible pb-6 pt-12"
     >
       <motion.div
         initial={{ x: 0 }}
@@ -30,7 +30,8 @@ export default function TechMarquee() {
           {logos.map((name) => (
             <div
               key={`a-${name}`}
-              className="flex h-24 w-12 items-center justify-center"
+              className="tooltip flex h-24 w-12 items-center justify-center"
+              data-tip={name}
             >
               <img
                 src={`/${name}.svg`}
@@ -45,7 +46,8 @@ export default function TechMarquee() {
           {logos.map((name) => (
             <div
               key={`b-${name}`}
-              className="flex h-24 w-12 items-center justify-center"
+              className="tooltip flex h-24 w-12 items-center justify-center"
+              data-tip={name}
             >
               <img
                 src={`/${name}.svg`}

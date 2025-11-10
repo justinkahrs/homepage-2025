@@ -1,8 +1,52 @@
+"use client";
+import { useEffect, useState } from "react";
 import { Gloock } from "next/font/google";
 import { motion } from "framer-motion";
 import ProjectCard from "./ProjectCard";
 const gloock = Gloock({ subsets: ["latin"], weight: "400" });
 export default function Quote() {
+  type RssItem = {
+    title: string;
+    link: string;
+    description: string;
+    pubDate: Date | null;
+    image?: string;
+  };
+  const [items, setItems] = useState<RssItem[]>([]);
+  useEffect(() => {
+    async function load() {
+      try {
+        const res = await fetch("/api/rss", { cache: "no-store" });
+        const xmlText = await res.text();
+        const doc = new DOMParser().parseFromString(xmlText, "application/xml");
+        const parsed: RssItem[] = Array.from(doc.querySelectorAll("item")).map(
+          (it) => {
+            const title = it.querySelector("title")?.textContent?.trim() || "";
+            const link = it.querySelector("link")?.textContent?.trim() || "";
+            const description =
+              it.querySelector("description")?.textContent?.trim() || "";
+            const pubDateStr =
+              it.querySelector("pubDate")?.textContent?.trim() || "";
+            const pubDate = pubDateStr ? new Date(pubDateStr) : null;
+            const mediaEl =
+              it.querySelector("media\\:content") ||
+              it.querySelector("enclosure");
+            const image = mediaEl?.getAttribute("url") || undefined;
+            return { title, link, description, pubDate, image };
+          },
+        );
+        parsed.sort((a, b) => {
+          const ta = a.pubDate ? a.pubDate.getTime() : 0;
+          const tb = b.pubDate ? b.pubDate.getTime() : 0;
+          return tb - ta;
+        });
+        setItems(parsed);
+      } catch {
+        setItems([]);
+      }
+    }
+    load();
+  }, []);
   return (
     <section
       className="relative right-[50%] left-[50%] -mt-32 -mr-[50vw] -ml-[50vw]
@@ -104,18 +148,27 @@ export default function Quote() {
           </div>
         </div>
         <div className="mt-40 grid grid-cols-1 gap-4 sm:grid-cols-2">
-          <ProjectCard
-            href="https://blog.justinkahrs.com/projects/o11n/"
-            title="o11n - AI code assistant"
-            subtitle="Building my own AI tools for fun and (no) profit"
-            src="/o11n.jpg"
-          />
-          <ProjectCard
-            href="https://blog.justinkahrs.com/projects/rcs-demo/"
-            title="Amastay AI - RCS Demo"
-            subtitle="An interactive view of how an AI property manager would work"
-            src="/amastay.png"
-          />
+          {items.slice(0, 4).map((item) => (
+            <ProjectCard
+              key={item.link}
+              href={item.link}
+              title={item.title}
+              subtitle={item.description}
+              src={item.image || "/o11n.jpg"}
+            />
+          ))}
+        </div>
+        <div className="mt-8 flex justify-center">
+          <a
+            href="https://blog.justinkahrs.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center border border-black/20
+              bg-white/90 px-5 py-3 text-base font-semibold text-black shadow-sm
+              transition hover:bg-white"
+          >
+            See all projects on my blog
+          </a>
         </div>
       </div>
     </section>

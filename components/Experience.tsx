@@ -91,7 +91,7 @@ function Experience() {
               whileInView={{ opacity: 1, y: 0, x: 0 }}
               viewport={{ once: true, amount: 0.6 }}
               transition={{ duration: 0.7 }}
-              className="text-left text-4xl tracking-tight text-gray-300
+              className="text-left text-4xl tracking-tight text-gray-400
                 uppercase italic"
             >
               Professional
