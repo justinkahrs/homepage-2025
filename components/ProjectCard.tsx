@@ -20,12 +20,10 @@ export default function ProjectCard({ href, title, src, subtitle }: Props) {
         target="_blank"
         rel="noopener noreferrer"
         className="block overflow-hidden rounded-2xl border-2 border-white/10
-          bg-black/50 backdrop-blur-sm transition hover:shadow-md
+          bg-black/50 backdrop-blur-sm transition transform hover:-translate-y-1 hover:shadow-md
           focus:outline-none focus:ring-2 focus:ring-white/20"
       >
-        <div
-          className="relative h-40 w-full bg-white/5 border-b border-white/10"
-        >
+        <div className="relative h-40 w-full bg-white/5 border-b border-white/10">
           <img src={src} alt="" className="h-full w-full object-cover" />
         </div>
         <div className="p-4">
