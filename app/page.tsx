@@ -14,7 +14,7 @@ export default function App() {
   const [pendingTarget, setPendingTarget] = useState<string | null>(null);
   const { scrollY } = useScroll();
   const updateActiveFromScroll = () => {
-    const ids = ["home", "skills", "experience", "contact"] as const;
+    const ids = ["home", "skills", "experience", "projects", "contact"] as const;
     // If a click initiated the scroll, freeze the active state to that target
     // and ignore all scroll-based calculations until the scroll ends.
     if (pendingTarget) {

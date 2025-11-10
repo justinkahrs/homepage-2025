@@ -55,7 +55,7 @@ export default function Quote() {
       className="relative right-[50%] left-[50%] -mt-32 -mr-[50vw] -ml-[50vw]
         w-screen bg-green-300 px-6 py-40 text-black sm:px-12"
     >
-      <div className="mx-auto max-w-4xl">
+      <div id="projects" className="mx-auto max-w-4xl">
         <div
           className="flex flex-col gap-4 sm:flex-row sm:items-center
             sm:justify-between"

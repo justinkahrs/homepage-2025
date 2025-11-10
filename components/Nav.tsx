@@ -7,6 +7,7 @@ type NavItem = {
 const NAV: NavItem[] = [
   { label: "Skills", href: "#skills" },
   { label: "Experience", href: "#experience" },
+  { label: "Projects", href: "#projects" },
   { label: "Contact", href: "#contact" },
 ];
 interface NavProps {
