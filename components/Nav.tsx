@@ -18,12 +18,12 @@ interface NavProps {
 function Nav({ active, setActive, setPendingTarget }: NavProps) {
   return (
     <nav
-      className="fixed inset-x-0 top-0 z-50 mx-auto mt-6 flex w-full max-w-full
-        items-center justify-center overflow-x-hidden px-4"
+      className="fixed inset-x-0 top-0 z-50 mx-auto flex w-full max-w-full
+        items-center justify-center overflow-x-hidden sm:mt-6 sm:px-4"
     >
       <div
         className="relative isolation-auto flex w-full max-w-4xl items-center
-          justify-between overflow-x-hidden px-3 py-2"
+          justify-between overflow-x-hidden sm:px-3 py-2"
       >
         <div className="absolute inset-0 bg-black/30 backdrop-blur-3xl" />
         <div
@@ -32,7 +32,7 @@ function Nav({ active, setActive, setPendingTarget }: NavProps) {
         >
           <div
             className="flex h-9 w-9 items-center justify-center rounded-full
-              bg-green-300 text-sm font-semibold text-black cursor-pointer"
+              bg-green-300 text-sm font-semibold text-black cursor-pointer ml-2"
             onClick={() => {
               const id = "home";
               const el =
