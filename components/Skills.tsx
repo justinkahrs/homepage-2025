@@ -72,7 +72,6 @@ function Skills() {
                     group-hover:opacity-0 group-focus:opacity-0"
                 />
               </span>
-              .
             </p>
           </div>
         </div>
