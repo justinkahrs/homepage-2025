@@ -14,7 +14,7 @@ const SKILL_SECTIONS = [
   },
   {
     title: "Business",
-    items: ["Stripe/Braintree", "LLM integrations", "Make/Zapier", "PandaDocs"],
+    items: ["Stripe/Braintree", "LLM integrations", "Make/Zapier/n8n", "PandaDocs"],
   },
   {
     title: "Testing & UX",
