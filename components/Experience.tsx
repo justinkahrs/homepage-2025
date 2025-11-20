@@ -30,7 +30,7 @@ function Experience() {
     {
       role: "Senior Full-Stack Engineer",
       company: "Amastay AI",
-      period: "March 2025 — June 2025",
+      period: "March 2025 — Present",
       blurb: (
         <>
           Built the product POC (
