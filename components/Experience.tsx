@@ -7,6 +7,22 @@ const gloock = Gloock({ subsets: ["latin"], weight: "400" });
 function Experience() {
   const jobs = [
     {
+      role: "AI & Workflow Developer",
+      company: "Augusto Digital",
+      period: "December 2025 — Present",
+      blurb: (
+        <>
+          Built end-to-end automation and AI workflows using n8n, JS, Python,
+          and API-driven services, integrating LLMs such as ChatGPT and Gemini
+          to power task-specific agents and multi-step assistants. Delivered
+          production-ready workflows by combining backend systems, webhooks, and
+          AI decision logic in an Agile, fast-moving environment.
+        </>
+      ),
+      link: "https://augusto.digital",
+      location: "Grand Rapids, MI (Remote)",
+    },
+    {
       role: "Creator / Solo-Developer",
       company: "o11n (AI-augmented IDE)",
       period: "April 2025 — Present",
