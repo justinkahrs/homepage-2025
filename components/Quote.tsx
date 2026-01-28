@@ -162,7 +162,7 @@ export default function Quote() {
                 href={item.link}
                 title={item.title}
                 subtitle={item.description}
-                src={item.image || "/o11n.jpg"}
+                src={item.image || "/placeholder.png"}
               />
             ))}
           </div>
